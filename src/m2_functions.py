@@ -38,6 +38,7 @@ def main():
     turtle3()
     turtle2()
     turtle2()
+    turtle5()
 
     window.close_on_mouse_click()
 
@@ -116,6 +117,26 @@ def turtle4():
 def turtle5():
     julia = rg.SimpleTurtle('square')
     julia.pen = rg.Pen('coral', 15)
+    julia.speed = 30
+
+    alice = rg.SimpleTurtle("turtle")
+    alice.pen = rg.Pen("gold", 35)
+    alice.speed = 35
+
+    x = 0
+    y = 0
+
+    juliapoint = rg.Point(x, y)
+    alicepoint = rg.Point(x, y)
+    for k in range(15):
+        julia.draw_square(50)
+        juliapoint.move_to(x + 5 * k, y + 5 * k)
+        julia.go_to(juliapoint)
+
+    for i in range(15):
+        alice.draw_regular_polygon(3, 50)
+        alicepoint.move_to(x - 5 * i, y - 5 * i)
+        alice.go_to(alicepoint)
 
 
 ########################################################################
@@ -198,7 +219,7 @@ def turtle5():
 
 ########################################################################
 #
-# TODO: 5.
+# DONE: 5.
 #   The previous two TODOs IMPLEMENTED a function (TO DO 3)
 #   and TESTED that function (TO DO 4).
 #
@@ -237,4 +258,5 @@ def turtle5():
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
 main()
